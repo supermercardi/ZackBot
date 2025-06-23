@@ -4,11 +4,6 @@
 # A pasta node_modules contém todos os pacotes de terceiros e é recriada com 'npm install'
 /node_modules
 
-# Arquivos de Autenticação e Sessão
-# A pasta 'auth' é criada pelo Baileys para salvar a sessão e evitar ter que escanear o QR Code a cada inicialização.
-# Contém informações sensíveis.
-/auth
-
 # Arquivos de Log
 # Arquivos de log que podem ser gerados pelo pino ou outros loggers
 *.log
