@@ -1,0 +1,52 @@
+[
+  {
+    "name": "menu",
+    "description": "Invoca esta lista de técnicas novamente. Não me faça repetir.",
+    "category": "Técnicas Gerais"
+  },
+  {
+    "name": "ping",
+    "description": "Mede minha velocidade de resposta. Acha mesmo que eu seria lento?",
+    "category": "Técnicas Gerais"
+  },
+  {
+    "name": "figurinha",
+    "description": "Forja uma imagem ou vídeo em um selo (figurinha). Responda à mídia, insolente.",
+    "category": "Técnicas Gerais"
+  },
+  {
+    "name": "opcl",
+    "description": "Alterna entre ABRIR e FECHAR o grupo para não-admins.",
+    "category": "Decretos de Administração"
+  },
+  {
+    "name": "tagall",
+    "description": "📢 (Admin) Convoca todos os seres inferiores para um comunicado.",
+    "category": "Decretos de Administração"
+  },
+  {
+    "name": "promover",
+    "description": "✨ (Admin) Concede uma fração do meu poder a um usuário.",
+    "category": "Decretos de Administração"
+  },
+  {
+    "name": "ban",
+    "description": "⛔ (Admin) Exila um usuário indigno deste domínio.",
+    "category": "Decretos de Administração"
+  },
+  {
+    "name": "authgroup",
+    "description": "🔒 (Dono) Permite que este domínio (grupo) seja digno da minha presença.",
+    "category": "Técnicas do Dono"
+  },
+  {
+    "name": "unauthgroup",
+    "description": "🔒 (Dono) Retira minha presença divina deste domínio (grupo).",
+    "category": "Técnicas do Dono"
+  },
+  {
+    "name": "reload",
+    "description": "🔄 (Dono) Recarrega todos os meus poderes. Use apenas se algo der errado.",
+    "category": "Técnicas do Dono"
+  }
+]
