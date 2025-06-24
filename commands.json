@@ -1,52 +1,92 @@
 [
   {
     "name": "menu",
-    "description": "Invoca esta lista de técnicas novamente. Não me faça repetir.",
-    "category": "Técnicas Gerais"
+    "description": "Mostra esta lista de comandos.",
+    "category": "Geral"
   },
   {
     "name": "ping",
-    "description": "Mede minha velocidade de resposta. Acha mesmo que eu seria lento?",
-    "category": "Técnicas Gerais"
+    "description": "Verifica a latência do bot.",
+    "category": "Geral"
   },
   {
     "name": "figurinha",
-    "description": "Forja uma imagem ou vídeo em um selo (figurinha). Responda à mídia, insolente.",
-    "category": "Técnicas Gerais"
+    "description": "Cria uma figurinha de uma imagem ou vídeo. Responda à mídia.",
+    "category": "Geral"
   },
   {
     "name": "opcl",
-    "description": "Alterna entre ABRIR e FECHAR o grupo para não-admins.",
-    "category": "Decretos de Administração"
-  },
-  {
-    "name": "tagall",
-    "description": "📢 (Admin) Convoca todos os seres inferiores para um comunicado.",
-    "category": "Decretos de Administração"
-  },
-  {
-    "name": "promover",
-    "description": "✨ (Admin) Concede uma fração do meu poder a um usuário.",
-    "category": "Decretos de Administração"
+    "description": "Abre ou fecha o grupo para não-admins.",
+    "category": "Moderação de Grupo"
   },
   {
     "name": "ban",
-    "description": "⛔ (Admin) Exila um usuário indigno deste domínio.",
-    "category": "Decretos de Administração"
+    "description": "Remove um membro do grupo. Ex: /ban @membro",
+    "category": "Moderação de Grupo"
+  },
+  {
+    "name": "mute",
+    "description": "Silencia um membro por um tempo. Ex: /mute @membro 10m",
+    "category": "Moderação de Grupo"
+  },
+  {
+    "name": "unmute",
+    "description": "Remove o silêncio de um membro. Ex: /unmute @membro",
+    "category": "Moderação de Grupo"
+  },
+  {
+    "name": "warn",
+    "description": "Adverte um membro. Ex: /warn @membro <motivo>",
+    "category": "Moderação de Grupo"
+  },
+  {
+    "name": "unwarn",
+    "description": "Limpa todas as advertências de um membro.",
+    "category": "Moderação de Grupo"
+  },
+  {
+    "name": "warnings",
+    "description": "Mostra o histórico de advertências de um membro.",
+    "category": "Moderação de Grupo"
+  },
+  {
+    "name": "tagall",
+    "description": "Marca todos os membros do grupo. Responda a uma mensagem.",
+    "category": "Administração do Bot"
+  },
+  {
+    "name": "promote",
+    "description": "Promove um membro a Admin do Bot.",
+    "category": "Administração do Bot"
+  },
+  {
+    "name": "rebaixar",
+    "description": "Remove os privilégios de Admin do Bot de um membro.",
+    "category": "Administração do Bot"
+  },
+  {
+    "name": "config",
+    "description": "Abre o painel de configurações do grupo.",
+    "category": "Administração do Bot"
+  },
+  {
+    "name": "kickina",
+    "description": "Inicia a remoção de membros inativos.",
+    "category": "Administração do Bot"
   },
   {
     "name": "authgroup",
-    "description": "🔒 (Dono) Permite que este domínio (grupo) seja digno da minha presença.",
-    "category": "Técnicas do Dono"
+    "description": "(Dono) Autoriza o bot a funcionar neste grupo.",
+    "category": "Comandos do Dono"
   },
   {
     "name": "unauthgroup",
-    "description": "🔒 (Dono) Retira minha presença divina deste domínio (grupo).",
-    "category": "Técnicas do Dono"
+    "description": "(Dono) Desautoriza o bot de funcionar neste grupo.",
+    "category": "Comandos do Dono"
   },
   {
     "name": "reload",
-    "description": "🔄 (Dono) Recarrega todos os meus poderes. Use apenas se algo der errado.",
-    "category": "Técnicas do Dono"
+    "description": "(Dono) Recarrega todos os arquivos de comando.",
+    "category": "Comandos do Dono"
   }
 ]

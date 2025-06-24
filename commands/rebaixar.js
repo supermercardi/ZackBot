@@ -1,12 +1,28 @@
 // commands/rebaixar.js
-const { getTargetJid } = require('../utils');
+
+// Supondo que você tenha um arquivo utils.js para essa função
+const getTargetJid = (msg) => {
+    if (msg.message?.extendedTextMessage?.contextInfo?.mentionedJid?.length > 0) {
+        return msg.message.extendedTextMessage.contextInfo.mentionedJid[0];
+    }
+    if (msg.message?.extendedTextMessage?.contextInfo?.participant) {
+        return msg.message.extendedTextMessage.contextInfo.participant;
+    }
+    return null;
+};
 
 module.exports = {
     name: 'rebaixar',
     description: 'Remove os privilégios de Admin do Bot de um usuário.',
     aliases: ['unpromote'],
 
-    async execute({ sock, msg, isGroup, isBotAdmin, config, saveConfig }) {
+    /**
+     * @param {object} context
+     * @param {boolean} context.isBotAdmin - Verdadeiro se o remetente é um admin do bot.
+     * @param {object} context.db - O módulo do banco de dados.
+     * @param {string} context.ownerJid - O JID do dono do bot.
+     */
+    async execute({ sock, msg, isGroup, isBotAdmin, db, ownerJid }) {
         const id = msg.key.remoteJid;
 
         if (!isGroup) return sock.sendMessage(id, { text: 'Este comando só pode ser usado em grupos.' });
@@ -18,21 +34,24 @@ module.exports = {
             return sock.sendMessage(id, { text: 'Você precisa mencionar um usuário ou responder à mensagem de alguém para rebaixá-lo.' });
         }
         
-        if (target === config.ownerJid) {
+        if (target === ownerJid) {
             return sock.sendMessage(id, { text: 'Você não pode rebaixar o Dono do bot.' });
         }
 
-        const adminIndex = config.groups[id].admins.indexOf(target);
-        if (adminIndex === -1) {
+        const targetIsAdmin = await db.isUserBotAdmin(id, target);
+        if (!targetIsAdmin) {
             return sock.sendMessage(id, { text: 'Este usuário não é um Admin do Bot.' });
         }
 
-        config.groups[id].admins.splice(adminIndex, 1);
-        saveConfig();
-
-        await sock.sendMessage(id, { 
-            text: `👎 O usuário @${target.split('@')[0]} não é mais um Admin do Bot.`,
-            mentions: [target] 
-        });
+        try {
+            await db.removeBotAdmin(id, target);
+            await sock.sendMessage(id, { 
+                text: `👎 O usuário @${target.split('@')[0]} não é mais um Admin do Bot.`,
+                mentions: [target] 
+            });
+        } catch(e) {
+            console.error("Erro ao rebaixar usuário:", e);
+            await sock.sendMessage(id, { text: 'Ocorreu um erro ao remover a permissão no banco de dados.' });
+        }
     }
 };

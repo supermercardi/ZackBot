@@ -4,6 +4,8 @@
 # A pasta node_modules contém todos os pacotes de terceiros e é recriada com 'npm install'
 /node_modules
 
+/auth
+
 # Arquivos de Log
 # Arquivos de log que podem ser gerados pelo pino ou outros loggers
 *.log
